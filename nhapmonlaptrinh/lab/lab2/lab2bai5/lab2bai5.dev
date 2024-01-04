@@ -1,6 +1,6 @@
 [Project]
-FileName=lab2bai2.dev
-Name=lab2bai2
+FileName=lab2bai5.dev
+Name=lab2bai5
 Type=1
 Ver=2
 ObjFiles=
@@ -12,7 +12,7 @@ MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
-IsCpp=0
+IsCpp=1
 Icon=
 ExeOutput=
 ObjectOutput=
@@ -51,8 +51,8 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=lab2bai2.c
-CompileCpp=0
+FileName=bai5lab2.c
+CompileCpp=1
 Folder=
 Compile=1
 Link=1
