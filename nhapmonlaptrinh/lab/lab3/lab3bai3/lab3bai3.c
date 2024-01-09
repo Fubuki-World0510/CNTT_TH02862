@@ -1,39 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
-int main()
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[])
 {
-	float sodien, sotien;
-	const float muc1 = 1678;
-	const float muc2 = 1734;
-	const float muc3 = 2014;
-	const float muc4 = 2536;
-	const float muc5 = 2834;
-	const float muc6 = 2927;
-	printf("nhap vao so dien");
-	scanf("%f", &sodien);
+	int sodien;
+	printf("nhap so dien: ");
+	scanf("%d", &sodien);
+	const float muc1 = 1678, muc2 = 1734, muc3 = 2014, muc4 = 2536, muc5 = 2834, muc6 = 2927;
+	float sotien;
 	if (sodien <= 50)
 	{
-		sotien = (muc1 * sodien);
+		sotien = sodien * muc1;
 	}
 	else if (sodien <= 100)
 	{
-		sotien = (muc1 * 50 + muc2 * (sodien - 50));
+		sotien = 50 * muc1 + (sodien - 50) * muc2;
 	}
 	else if (sodien <= 200)
 	{
-		sotien = (muc1 * 50 + muc2 * 50 + muc3 * (sodien - 100));
+		sotien = 50 * muc1 + muc2 * 50 + (sodien - 100) * muc3;
 	}
 	else if (sodien <= 300)
 	{
-		sotien = (muc1 * 50 + muc2 * 50 + muc3 * 50 + muc4 * (sodien - 100));
+		sotien = 50 * (muc1 + muc2) + 100 * muc3 + (sodien - 100) * muc4;
 	}
 	else if (sodien <= 400)
 	{
-		sotien = (muc1 * 50 + muc2 * 50 + muc3 * 50 + muc4 * 50 + muc5 * (sodien - 100));
+		sotien = 50 * (muc1 + muc2) + muc3 * 100 + muc4 * 100 + (sodien - 100) * muc5;
 	}
-	else
+	else if (sodien >= 401)
 	{
-		sotien = (muc1 * 50 + muc2 * 50 + muc3 * 50 + muc4 * 50 + muc5 * 50 + muc6 * (sodien - 400));
+		sotien = 50 * (muc1 + muc2) + (muc3 + muc4 + muc5) * 100 + (sodien - 100) * muc6;
 	}
+	printf("so tien dien la: %f", sotien);
+
 	return 0;
 }
