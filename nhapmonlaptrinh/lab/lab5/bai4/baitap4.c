@@ -13,6 +13,7 @@ int ham(int so1, int so2, int so3)
 int main()
 {
     int a, b, c;
+    printf("Nhap 3 con so nguyen bat ky");
     scanf("%d", &a);
     scanf("%d", &b);
     scanf("%d", &c);

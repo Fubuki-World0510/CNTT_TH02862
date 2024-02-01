@@ -8,6 +8,14 @@ int dopdopyetyet(int nam)
 }
 int main()
 {
-    printf("Dop dop yet yet %d", dopdopyetyet(2024));
-    return 0;
+    int skib;
+    printf("Nhap so nam di bn: ");
+    scanf("%d", &skib);
+    
+    if (dopdopyetyet(skib) == 1) {
+        printf("La nam Juan nhe ban");
+    } else {
+        printf("La nam bth thoi ban");
+    }
+        return 0;
 }
