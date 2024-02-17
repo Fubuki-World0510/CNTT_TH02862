@@ -1,12 +1,25 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
 	int x;
-	int i = 1;
-	int c = 0;
-	printf("So? ");
+	int count = 0;
+	printf("nhap x : ");
 	scanf("%d", &x);
-	for(i; i<x; i++) {
-		if(i*i == x) printf("IS CHINH PHUONG");
+	for (int i = 1; i < x; i++)
+	{
+		if (i * i == x)
+		{
+			count++;
+		}
 	}
+	if (count == 0)
+	{
+		printf("khong la so chinh phuong");
+	}
+	else
+	{
+		printf("la so chinh phuong");
+	}
+	return 0;
 }

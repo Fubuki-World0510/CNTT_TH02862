@@ -2,21 +2,45 @@
 
 int main()
 {
-    int max;
-    printf("Nhap n di nhoc");
-    scanf("%d", &max);
-    int a[max];
-    int im = 1;
+    int n;
+    int max, min;
+    printf("Nhap so Array: ");
+    scanf("%d", &n);
+    int a[n], i;
 
-    for (int i = 0; i < max; i++)
+    for (i = 0; i < n; i++)
     {
-        printf("Nhap a[%d]", i);
+        printf("a[%d] = ", i);
         scanf("%d", &a[i]);
     }
-    for (int i = 0; i < max; i++)
+
+    printf("Cac so trong Array:\n");
+    for (i = 0; i < n; i++)
     {
-        if(a[i] > max) {
-            
+        printf("\t%d", a[i]);
+    }
+
+    // Max
+    max = a[0];
+    for (i = 1; i < n; i++)
+    {
+        if (a[i] >= max)
+        {
+            max = a[i];
         }
     }
+    printf("\nMax: %d", max);
+
+    // Min
+    min = a[0];
+    for (i = 1; i < n; i++)
+    {
+        if (a[i] <= min)
+        {
+            min = a[i];
+        }
+    }
+    printf("\nMin: %d", min);
+
+    return 0;
 }
