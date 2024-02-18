@@ -1,5 +1,24 @@
 #include <stdio.h>
+#include <math.h>
 
+// 🎇
+int bcnn(int a, int b)
+{
+    int max = a > b ? a : b;
+    int kq = max;
+    while (1)
+    {
+        if (max % a == 0 && max % b == 0)
+        {
+            kq = max;
+            break;
+        }
+        ++max;
+    }
+    return kq;
+}
+
+// 🐘
 void cn1()
 {
     int x;
@@ -39,29 +58,76 @@ void cn1()
 }
 
 void cn2()
-{ // thiếu bội chung
-    int x, y;
+{
+    int a, b;
     printf("Nhap 2 so bat ky di ban: ");
-    scanf("%d", &x);
+    scanf("%d", &a);
     printf("Nhap tiep so nua di, dm: ");
-    scanf("%d", &y);
+    scanf("%d", &b);
 
-    for (int i = 1; i <= x; i++)
+    printf("Boi so nho nhat la %d\n", bcnn(a, b));
+    if (a == 0 || b == 0)
     {
-        if (x % i == 0 && y % i == 0)
+        printf("ket qua ngu nhu cho: %d", a + b);
+    }
+    while (a != b)
+    {
+        if (a > b)
         {
-            printf("%d la uoc chung cua 12 va 18\n\n", i);
+            a = a - b;
+        }
+        else
+        {
+            b = b - a;
         }
     }
+    printf("Ucln: %d\n\n", a);
 }
 void cn3()
 {
-    int start;
-    int end;
-    int Hours = 24;
-    printf("Nhap so gio bat dau");
-    scanf("%d", &start);
-    scanf("%d", &end);
+    int gioBatDau, gioKetThuc;
+    int tongGio;
+    float giaTien;
+    printf("Nhap gio bat dau: ");
+    scanf("%d", &gioBatDau);
+    printf("Nhap gio ket thuc: ");
+    scanf("%d", &gioKetThuc);
+    // check==========================
+    tongGio = gioKetThuc - gioBatDau;
+
+    if (gioBatDau >= 12 && gioBatDau <= 23)
+    {
+        if (tongGio <= 3)
+        {
+            giaTien = tongGio * 150000;
+            // check==========================
+        }
+        else
+        {
+            giaTien = 450000 + (tongGio - 3) * 105000;
+            // Lỗi[150000/h -> 450000]==========================
+            if (gioBatDau >= 14 && gioBatDau <= 17)
+            {
+                giaTien = giaTien * 0.9;
+            }
+
+            // if (tongGio >= 4) {
+            //     giaTien = 450000+(gio-3)*105000;
+            // }
+        }
+        if (gioBatDau >= 14 && gioBatDau < 17)
+        {
+            printf("Gia tien can thanh toan: %.2f\n", giaTien * 0.9);
+        }
+        else
+        {
+            printf("Gia tien can thanh toan: %.2f\n", giaTien);
+        }
+    }
+    else
+    {
+        printf("Quan chi hoat dong tu 12 gio den 23 gio.\n");
+    }
 }
 int main()
 {
@@ -95,6 +161,7 @@ int main()
             break;
         case 3:
             printf("Day la chuc nang 3\n\n");
+            cn3();
             break;
         case 4:
             printf("Day la chuc nang 4\n\n");
