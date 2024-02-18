@@ -24,8 +24,5 @@ int main()
             printf("\t %d", a[i]);
         }
     }
-    printf("Check %d", a[1]);
-    printf("Check tong: %d", tong);
-    printf("Check im: %d", im);
     printf("\nTrung binh cac so do la %2.f", (float)tong / im);
 }
