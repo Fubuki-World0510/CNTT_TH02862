@@ -1,11 +1,12 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int n;
     printf("Nhap n di nhoc");
     scanf("%d", &n);
     int a[n], i, getTong;
-    int im = 1;
+    int im = 0;
     int tong = 0;
 
     for (int i = 0; i < n; i++)
@@ -16,11 +17,15 @@ int main() {
     printf("Cac so chia het cho 3 la: \n");
     for (int i = 0; i < n; i++)
     {
-        if(a[i]%3 == 0) {
+        if (a[i] % 3 == 0)
+        {
             im++;
             tong = tong + a[i];
             printf("\t %d", a[i]);
         }
     }
-    printf("\nTrung binh cac so do la %d", (float)tong/im);
+    printf("Check %d", a[1]);
+    printf("Check tong: %d", tong);
+    printf("Check im: %d", im);
+    printf("\nTrung binh cac so do la %2.f", (float)tong / im);
 }
