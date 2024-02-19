@@ -205,119 +205,55 @@ void cn6()
 
     printf("Cai gia ma may phai tra la %.0lf\n", tongTien);
 }
-//[Chuc nang 8 - START]=======================================
 struct SinhVien
 {
-    char ten[999];
+    char hoTen[50];
     float diem;
-    char hocLuc[999];
+    char hocLuc[20];
 };
-
-void thongtin(struct SinhVien danhsach[], int *n)
+void cn7()
 {
-    int i;
-
-    printf("\nNhap so luong sinh vien: ");
-    scanf("%d", n);
-
-    for (i = 0; i < *n; i++)
+    struct SinhVien sort;
+    for (int i = 0; i < n; i++)
     {
-        printf("\nNhap thong tin sinh vien %d: \n", (i + 1));
-        fflush(stdin);
-
-        printf("Ten: ");
-        gets(danhsach[i].ten);
+        printf("Thong tin sv %d:\n", i + 1);
+        printf("Ho ten: ");
+        scanf("%s", sv[i].hoTen);
         printf("Diem: ");
-        scanf("%f", &danhsach[i].diem);
+        scanf("%f", &sv[i].diem);
+
+        // Xác định học lực
+        if (sv[i].diem >= 9.0)
+            strcpy(sv[i].hocLuc, "Xuat sac");
+        else if (sv[i].diem >= 8.0)
+            strcpy(sv[i].hocLuc, "Gioi");
+        else if (sv[i].diem >= 6.5)
+            strcpy(sv[i].hocLuc, "Kha");
+        else if (sv[i].diem >= 5.0)
+            strcpy(sv[i].hocLuc, "Trung binh");
+        else
+            strcpy(sv[i].hocLuc, "Yeu");
     }
-}
-
-void sort(struct SinhVien danhsach[], int n)
-{
-    int i, j;
-
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        for (j = n; j > i; j--)
+        for (int j = i + 1; j < n; j++)
         {
-            if (danhsach[j].diem > danhsach[j - 1].diem)
+            if (sv[i].diem < sv[j].diem)
             {
-                struct SinhVien dstamthoi = danhsach[j];
-                danhsach[j] = danhsach[j - 1];
-                danhsach[j - 1] = dstamthoi;
+                sort = sv[i];
+                sv[i] = sv[j];
+                sv[j] = sort;
             }
         }
     }
 }
-
-void hocLuc(struct SinhVien danhsach[], int n)
+void SinhVienDisplay(struct SinhVien *sv, int n)
 {
-    int i;
-
-    for (i = 0; i < n; i++)
+    printf("\nDa sap xep:\n");
+    for (int i = 0; i < n; i++)
     {
-        if (danhsach[i].diem >= 9)
-            strcpy(danhsach[i].hocLuc, "Xuat sac");
-        else if (danhsach[i].diem >= 8)
-            strcpy(danhsach[i].hocLuc, "Gioi");
-        else if (danhsach[i].diem >= 6.5)
-            strcpy(danhsach[i].hocLuc, "Kha");
-        else if (danhsach[i].diem >= 5)
-            strcpy(danhsach[i].hocLuc, "Trung binh");
-        else
-            strcpy(danhsach[i].hocLuc, "Yeu");
+        printf("Ho ten: %s\tDiem: %.2f\tHoc luc: %s\n", sv[i].hoTen, sv[i].diem, sv[i].hocLuc);
     }
-}
-
-void display(struct SinhVien danhsach[], int n)
-{
-    int i;
-
-    printf("\nSinh vien\tDiem\tHoc luc\n");
-
-    for (i = 0; i < n; i++)
-    {
-        printf("%s\t\t%g\t%s\n", danhsach[i].ten, danhsach[i].diem, danhsach[i].hocLuc);
-    }
-}
-//[Chuc nang 8 - END]=======================================
-void cn7()
-{
-    double vay = 500000000;
-    int hanVay = 24 * 12;
-    double laiSuat = 0.072;
-
-    double phanTramVay;
-    printf("So phan tram vay: ");
-    scanf("%lf", &phanTramVay);
-
-    double traTruoc = vay * (1 - phanTramVay / 100);
-    double conLai = vay - traTruoc;
-    double laiSuatThang = laiSuat / 12;
-    double laiHangThang = 0;
-    double tienGocThang = conLai / hanVay;
-    double tongTienTra = traTruoc;
-
-    printf("\nTHONG TIN VAY MUA XE\n");
-    printf("Thoi han vay: %d", hanVay);
-    printf("So tien vay: %.0lf VND\n", vay);
-    printf("So phan tram tra truoc: %.2lf%%\n", phanTramVay);
-    printf("So tien tra truoc: %.0lf VND\n", traTruoc);
-    printf("So tien con lai: %.0lf VND\n", conLai);
-    printf("Thoi han vay: %d thang\n", hanVay);
-    printf("Lai suat nam: %.2lf%%\n", laiSuat);
-
-    // printf("\nBANG KE HOACH TRA GOP HANG THANG\n");
-    // printf("Thang\tLai Hang Thang\tTien Goc Hang Thang\tTong Tien Tra\n");
-
-    // for (int i = 1; i <= hanVay; i++)
-    // {
-    //     laiHangThang = conLai * laiSuatThang;
-    //     tongTienTra += laiHangThang + tienGocThang;
-    //     conLai -= tienGocThang;
-
-    //     printf("%d\t%.0lf\t\t%.0lf\t\t\t%.0lf\n", i, laiHangThang, tienGocThang, tongTienTra);
-    // }
 }
 int main()
 {
@@ -379,25 +315,24 @@ int main()
         case 7:
             system("cls");
             printf("Day la chuc nang 7\n\n");
-            cn7();
+            int svN;
+            printf("Nhap so luong sinh vien: ");
+            scanf("%d", &svN);
+            struct SinhVien sv[svN];
+            cn7(sv, svN);
+            SinhVienDisplay(sv, svN);
             break;
         case 8:
             system("cls");
             printf("Day la chuc nang 8\n\n");
-            struct SinhVien danhsach[40];
-            int n;
-            thongtin(danhsach, &n);
-            sort(danhsach, n);
-            hocLuc(danhsach, n);
-            display(danhsach, n);
             break;
         case 9:
             system("cls");
-            printf("Het cuu, toi khong biet lam chuc nang nay\n\n");
+            printf("Day la chuc nang 9\n\n");
             break;
         case 10:
             system("cls");
-            printf("Het cuu, toi khong biet lam chuc nang nay\n\n");
+            printf("Day la chuc nang 10\n\n");
             break;
         case 11:
             break;
@@ -407,35 +342,3 @@ int main()
         }
     } while (menu != 11);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-+-------------------+
-| INFO ASSIGNMENT   |
-|                   |
-|  Họ tên:          |
-|  Trần Hải Nam     |
-|                   |
-|  MSSV:            |
-|  TH02862          |
-|                   |
-|  Github:          |
-|  Fubuki-World0510 |
-+-------------------+
-- Nâng cấp:
- + Message Box khi nhập sai số trong menu
- + Khởi động chương trình vay nợ
- + Table các thông tin sắp xếp
-*/

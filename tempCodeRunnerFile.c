@@ -1,41 +1,52 @@
 #include <stdio.h>
+#include <math.h>
 
-int main() {
-    int gioBatDau, gioKetThuc;
-    int tongGio;
-    float giaTien;
+void vayTienMuaXe()
+{
+    // Các thông số cố định
+    double soTienVay = 500000000; // 500 triệu
+    int thoiHanVay = 24 * 12;     // 24 năm
+    double laiSuatNam = 0.072;    // 7.2%
 
-    printf("Nhap gio bat dau: ");
-    scanf("%d", &gioBatDau);
+    // Nhập thông số vay từ người dùng
+    double phanTramVay;
+    printf("Nhap vao so phan tram vay toi da (vi du: 80): ");
+    scanf("%lf", &phanTramVay);
 
-    printf("Nhap gio ket thuc: ");
-    scanf("%d", &gioKetThuc);
-//check==========================
-    tongGio = gioKetThuc - gioBatDau;
+    // Tính toán
+    double soTienTraTruoc = soTienVay * (1 - phanTramVay / 100);
+    double soTienConLai = soTienVay - soTienTraTruoc;
+    double laiSuatThang = laiSuatNam / 12;
+    double laiHangThang = 0;
+    double tienGocHangThang = soTienConLai / thoiHanVay;
+    double tongTienTra = soTienTraTruoc;
 
-    if (gioBatDau >= 12 && gioBatDau <= 23) {
-        if (tongGio <= 3) {
-            giaTien = tongGio * 150000;
-            //check==========================
-        } else {
-            giaTien = 450000 + (tongGio - 3) * 105000;
-//Lỗi[150000/h -> 450000]==========================
-            if (gioBatDau >= 14 && gioBatDau <= 17) {
-                giaTien = giaTien * 0.9;
-            }
+    // In thông tin
+    printf("\nTHONG TIN VAY MUA XE\n");
+    printf("Thoi han vay: %d", thoiHanVay);
+    printf("So tien vay: %.0lf VND\n", soTienVay);
+    printf("So phan tram tra truoc: %.2lf%%\n", phanTramVay);
+    printf("So tien tra truoc: %.0lf VND\n", soTienTraTruoc);
+    printf("So tien con lai: %.0lf VND\n", soTienConLai);
+    printf("Thoi han vay: %d thang\n", thoiHanVay);
+    printf("Lai suat nam: %.2lf%%\n", laiSuatNam);
 
-            // if (tongGio >= 4) {
-            //     giaTien = 450000+(gio-3)*105000;
-            // }
-        }
-        if (gioBatDau >= 14 && gioBatDau < 17) {
-            printf("Gia tien can thanh toan: %.2f\n", giaTien * 0.9);
-        } else {
-            printf("Gia tien can thanh toan: %.2f\n", giaTien);
-        }
-    } else {
-        printf("Quan chi hoat dong tu 12 gio den 23 gio.\n");
+    // In bảng kế hoạch trả góp hàng tháng
+    printf("\nBANG KE HOACH TRA GOP HANG THANG\n");
+    printf("Thang\tLai Hang Thang\tTien Goc Hang Thang\tTong Tien Tra\n");
+
+    for (int i = 1; i <= thoiHanVay; i++)
+    {
+        laiHangThang = soTienConLai * laiSuatThang;
+        tongTienTra += laiHangThang + tienGocHangThang;
+        soTienConLai -= tienGocHangThang;
+
+        printf("%d\t%.0lf\t\t%.0lf\t\t\t%.0lf\n", i, laiHangThang, tienGocHangThang, tongTienTra);
     }
+}
 
+int main()
+{
+    vayTienMuaXe();
     return 0;
 }
