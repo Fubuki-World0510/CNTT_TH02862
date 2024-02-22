@@ -4,6 +4,7 @@
 #define MB_TOPMOST 0x0004
 #include <unistd.h>
 #include <windows.h>
+#include <time.h>
 // 🎇
 int bcnn(int a, int b)
 {
@@ -281,6 +282,40 @@ void display(struct SinhVien danhsach[], int n)
     }
 }
 //[Chuc nang 8 - END]=======================================
+
+void cn9()
+{
+    int a;
+    int b, c;
+    int count = 0;
+    printf("So thu nhat: \n");
+    scanf("%d", &b);
+    printf("So thu hai: \n");
+    scanf("%d", &c);
+    srand(time(0));
+    printf("So trung thuong:\n");
+    for (int i = 0; i < 2; i++)
+    {
+        a = rand() % 15;
+        printf("%10d", a);
+        if (b == a || c == a)
+        {
+            count++;
+        }
+    }
+    if (count == 0)
+    {
+        printf("\nBuon roi ban\n");
+    }
+    else if (count == 1)
+    {
+        printf("\nGiai nhi da qua luon ban\n");
+    }
+    else
+    {
+        printf("OMGGGGG BAN GIAI NHAT, HUUUUUUUUUUUU\n");
+    }
+}
 void cn7()
 {
     double vay = 500000000;
@@ -394,6 +429,7 @@ int main()
         case 9:
             system("cls");
             printf("Het cuu, toi khong biet lam chuc nang nay\n\n");
+            cn9();
             break;
         case 10:
             system("cls");

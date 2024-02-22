@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//SẮP XẾP TỪ LỚN ĐẾN BÉ
 int main()
 {
     int n, i;
@@ -15,9 +15,10 @@ int main()
     for (i = 0; i < n; i++)
     {
         printf("\t %d", a[i]);
-    }
+    } //Lay so ban dau
     int j;
     int b;
+    //Sap xep
     for (i = 0; i < n; i++)
     {
         for (j = 0; j < n; j++)
@@ -31,6 +32,7 @@ int main()
         }
     }
     printf("\nLuc sau:");
+    //Lay so sau khi sap xep
     for (i = 0; i < n; i++)
     {
         printf("\t%d", a[i]);

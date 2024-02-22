@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+// TÍNH CÁC SỐ CHIA HẾT CHO 3, TỔNG LẠI VÀ CHIA CHO TRUNG BÌNH
 int main()
 {
     int n;
@@ -20,7 +20,7 @@ int main()
         if (a[i] % 3 == 0)
         {
             im++;
-            tong = tong + a[i];
+            tong = tong + a[i]; // Tinh tong cac so chia het cho 3
             printf("\t %d", a[i]);
         }
     }

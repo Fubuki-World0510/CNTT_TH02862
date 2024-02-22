@@ -12,7 +12,7 @@ int main()
     printf("Nhap Password: ");
     gets(password);
 
-    if (strcmp(user2, user1) == 0 && strcmp(password, pass) == 0)
+    if (strcmp(user2, user1) == 0 && strcmp(password, pass) == 0) // So sánh string
     {
         printf("Full Access");
     }

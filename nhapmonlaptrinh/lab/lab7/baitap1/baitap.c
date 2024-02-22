@@ -12,13 +12,13 @@ int main()
     na = 0;
     pa = 0;
 
-    for (i = 0; i < strlen(sus); i++)
+    for (i = 0; i < strlen(sus); i++) // Xem độ dài chuỗi
     {
-        char ch = tolower(sus[i]);
+        char ch = tolower(sus[i]); // Ký tự hoa
 
         if (isalpha(ch))
         {
-            if (ch=='u' || ch=='e' || ch=='o' || ch=='a' || ch=='i')
+            if (ch == 'u' || ch == 'e' || ch == 'o' || ch == 'a' || ch == 'i')
             {
                 na++;
             }

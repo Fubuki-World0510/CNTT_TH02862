@@ -4,6 +4,7 @@
 void xep(char b[][20])
 {
     int i, j;
+    //Sắp xếp các String theo ký tự
     for (i = 0; i < 4; i++)
     {
         for (j = i + 1; j < 5; j++)

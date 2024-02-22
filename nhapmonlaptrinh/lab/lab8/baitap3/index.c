@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
         getchar();
     }
     char msv[50];
-    printf("Nhap mssv: ");
+    printf("Lam on, nhap mssv de tim thong tin: ");
     gets(msv);
     for (i = 0; i < 0; i++) {
         if(strcmp(msv, a1[i].mssv) == 0) {

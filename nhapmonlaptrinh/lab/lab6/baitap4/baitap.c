@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+// ARRAY 2 CHIỀU
 int main()
 {
     int n, m, i, j;
@@ -15,7 +15,7 @@ int main()
     {
         for (j = 0; j < m; j++)
         {
-            printf("a[%d][%d]: ", i, j);
+            printf("a[%d][%d]: ", i, j); //a[hàng][cột]
             scanf("%d", &a[i][j]);
         }
     }
@@ -25,7 +25,7 @@ int main()
     {
         for (j = 0; j < m; j++)
         {
-            printf("\t %d", a[i][j] * a[i][j]);
+            printf("\t %d", a[i][j] * a[i][j]); // Bình phương số nhập trong Array
         }
         printf("\n");
     }
