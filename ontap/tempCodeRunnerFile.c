@@ -1,22 +1,4 @@
-#include <stdio.h>
-
-void hoanvi(int px, int py)
-
-{
-
-	int pz;
-
-	pz = px;
-	px = py;
-	py = pz;
-};
-
-void main()
-
-{
-
-	int a = 15, b = 21;
-	hoanvi(a, b);
-
-	printf("%d%d", a, b);
-};
+if (an < 0)
+            // {
+            //     return printf("[CANH BAO]: BAN DANG NHAP SO NGUYEN AM");
+            // }
