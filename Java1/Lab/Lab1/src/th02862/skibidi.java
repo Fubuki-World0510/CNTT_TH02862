@@ -5,7 +5,6 @@
 package th02862;
 
 import java.util.Scanner;
-import java.lang.Math;
 
 /**
  *
@@ -62,7 +61,6 @@ public class skibidi {
                 System.out.printf("Phương trình b khác 0, kết quả: %f", -c / b);
             }
         } else if (a != 0) {
-            delta = b * b - 4 * a * c;
             if (delta < 0) {
                 System.out.printf("Vô nghiệm delta");
             } else if (delta == 0) {
