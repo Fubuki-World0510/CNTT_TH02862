@@ -80,5 +80,7 @@ public class skibidi {
 
         double tb = (n1 + n2 + n3) / 3;
         System.out.println("Trung bình của 3 số nguyên là: " + tb);
+
+        data.close();
     }
 }
