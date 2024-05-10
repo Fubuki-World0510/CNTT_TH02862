@@ -1,0 +1,40 @@
+p.sao {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow:0 0 5px red;
+}
+
+p#tx1 {
+    font-size: 20px;
+    color: red;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+p#tx2 {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+p#tx3 {
+    font-size: 20px;
+    color: green;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+a#sao-red {
+    color: red;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}

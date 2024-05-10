@@ -1,0 +1,30 @@
+p#title {
+    font-size: 30px;
+    font-weight: bold;
+}
+a#red {
+    color: red;
+}
+
+p#doan1 {
+    color: red;
+    font-size: 20px;
+}
+
+p#doan2 {
+    color: blue;
+    font-size: 20px;
+}
+
+p#doan3 {
+    color: green;
+    font-size: 20px;
+}
+
+p#doan4 {
+    color: red;
+    font-size: 20px;
+}
+div.in {
+    font-style: italic;
+}

@@ -1,0 +1,49 @@
+a#home {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+a#intro {
+    font-size: 20px;
+    color: green;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+a#call {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+a#sug {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+a#ask {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
