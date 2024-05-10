@@ -33,6 +33,8 @@ public class bai4 {
             case 3:
                 bai3.main(args);
                 break;
+            case 4:
+                break;
             default:
                 throw new AssertionError();
         }
