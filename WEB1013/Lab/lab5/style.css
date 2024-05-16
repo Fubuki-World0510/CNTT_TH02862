@@ -1,0 +1,12 @@
+div>img {
+    width: 20%;
+    height: 150px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: yellow;
+    box-shadow: ;
+}
+div>img:hover {
+
+}

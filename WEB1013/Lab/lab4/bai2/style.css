@@ -7,10 +7,17 @@ a#home {
     letter-spacing: 1px;
     line-height: 25px;
 }
+a#home:hover, a#intro:hover, a#call:hover, a#sug:hover, a#ask:hover {
+    color: red;
+    Text-decoration: underline;
+}
+a#home:visited, a#intro:visited, a#call:visited, a#sug:visited, a#ask:visited {
+    color: green;
+}
 
 a#intro {
     font-size: 20px;
-    color: green;
+    color: blue;
     font-variant: small-caps;
     word-spacing: 2px;
     text-decoration: none;
