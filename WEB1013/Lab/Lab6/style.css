@@ -1,0 +1,75 @@
+a#home {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+a#home:hover, a#intro:hover, a#call:hover, a#sug:hover, a#ask:hover {
+    color: red;
+    Text-decoration: underline;
+}
+a#home:visited, a#intro:visited, a#call:visited, a#sug:visited, a#ask:visited {
+    color: green;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+.container>header {
+    height: 1px;
+    height: 4px;
+    background-image: "https://media.discordapp.net/attachments/1194212827645354046/1242657715654758531/image.png?ex=664ea2ae&is=664d512e&hm=e74eecf2ffccb4a9baf3d6883aeda768a0a779d8fabde3efbef89d8aaf17ac7e&=&format=webp&quality=lossless&width=857&height=207";
+    background-size: 100% 100%;
+    height: 0px;
+    padding-bottom: 25%;
+}
+.container>nav {
+    
+}
+
+a#intro {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+a#call {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+a#sug {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+a#ask {
+    font-size: 20px;
+    color: blue;
+    font-variant: small-caps;
+    word-spacing: 2px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
