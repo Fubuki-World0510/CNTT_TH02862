@@ -44,10 +44,18 @@ public class NhanVien {
     }
     
     public double getThuNhap() {
-        return 0;
+        return this.luong - getThue();
     }
     public double getThue() {
-        return 0;
+        if(this.luong > 15000000) {
+            return this.luong * 0.12;
+        } else {
+            if(this.luong < 9000000) {
+                return 0;
+            } else {
+                return this.luong * 0.1;
+            }
+        }
     }
     public void xuatThongTin() {
         System.out.println("Ma nhan vien: " + this.maNV);

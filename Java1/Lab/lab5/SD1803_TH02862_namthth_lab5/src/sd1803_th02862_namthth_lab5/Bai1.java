@@ -26,11 +26,9 @@ public class Bai1 {
             if(data.nextLine() == "N" || data.nextLine() == "n") {
                 break;
             }
-            
-            double tong = 0;
             System.out.println("Danh sách vừa nhập: ");
             for(Object d : ob){
-                tong = tong;
+                System.out.println(d);
             }
         }
     }
