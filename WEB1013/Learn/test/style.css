@@ -1,0 +1,31 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#box {
+    max-width: 50%;
+    max-height: 100%;
+    margin: 0 auto;
+  }
+
+  nav {
+    background: rgb(74, 171, 203);
+    padding: 10px;
+  }
+  .navbar-vippro {
+    color: white;
+    text-align: center;
+  }
+
+  #text-dev {
+    display: flex;
+  }
+  .content {
+    flex-basis: 50%;
+    padding: 5px;
+  }
+
+  footer {
+    background: rgb(58, 135, 161);
+    padding: 10px;
+    color: white;
+  }
