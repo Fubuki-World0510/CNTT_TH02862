@@ -29,3 +29,11 @@
     padding: 10px;
     color: white;
   }
+
+  #content2 {
+    display: flex;
+  }
+
+  .layout {
+    padding: 50px;
+  }
