@@ -1,0 +1,13 @@
+{
+  "name": "b1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "b1": "nodemon ./WEB1043/lt/b1/index.js",
+    "lab1": "nodemon ./WEB1043/lab/lab2/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
