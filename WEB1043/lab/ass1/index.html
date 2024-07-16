@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="login-form">
+            <div align="center" class="cente">
+                <br>
+                <br>
+                <h2>LOGIN FORM</h2>
+                <form action="" onsubmit="return validate()">
+                    <div>
+                        <label for="">Email</label> <br>
+                        <input type="email" id="email">
+                    </div>
+                    <div>
+                        <label for="">Password</label> <br>
+                        <input type="password" id="password">
+                    </div>
+                    <div>
+                        <label for="">Confirm Password</label> <br>
+                        <input type="password" id="confirm">
+                    </div>
+                    <br>
+                    <button>Login</button>
+                    <br>
+                    <br>
+                    <div class="textErr">
+                        <span id="EmailErr"></span> <br>
+                        <span id="Suc" style="color: green;"></span> <br>
+                        <span id="PassErr"></span> <br>
+                        <span id="ConfirmErr"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </div>
+</body>
+
+</html>
