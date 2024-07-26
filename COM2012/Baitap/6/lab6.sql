@@ -1,0 +1,42 @@
+-- C1
+Select Ten_NV, Ten_PB, Ten_DUAN from PHONG_BAN Inner Join NHAN_VIEN ON PHONG_BAN.Ma_PB = NHAN_VIEN.PHG 
+Inner Join QUANLY_DUAN ON QUANLY_DUAN.Ma_NHANVIEN = NHAN_VIEN.ID_Nhanvien Inner Join   
+DU_AN ON DU_AN.Ma_DUAN = QUANLY_DUAN.Ma_DUAN
+-- C2
+Select Ho_NV, Ten_NV, Luong, Ten_DUAN from NHAN_VIEN Inner Join QUANLY_DUAN ON NHAN_VIEN.ID_Nhanvien = QUANLY_DUAN.Ma_NHANVIEN
+Inner Join DU_AN ON QUANLY_DUAN.Ma_DUAN = DU_AN.Ma_DUAN
+-- C3
+Insert into NHAN_VIEN values
+(5,'Tran','A','1/1/1987','15 Quang Trung Da Nang',1,1000,'PB004')
+Update QUANLY_DUAN set
+Ma_NHANVIEN = 5 where Ma_DUAN = 'DA003'
+Select Ten_NV, Luong, Ten_DUAN from PHONG_BAN Inner Join NHAN_VIEN ON PHONG_BAN.Ma_PB = NHAN_VIEN.PHG
+Inner Join QUANLY_DUAN ON QUANLY_DUAN.Ma_NHANVIEN = NHAN_VIEN.ID_Nhanvien
+Inner Join DU_AN ON DU_AN.Ma_DUAN = QUANLY_DUAN.Ma_DUAN 
+where Ten_PB = N'Thiet ke'
+-- C4
+Update DU_AN set
+Ngay_BATDAU = '2016/01/01' where Ma_DUAN = 'DA003'
+Select HO_NV, Ten_NV, Luong, Ten_DUAN, Ngay_BATDAU from PHONG_BAN Inner Join NHAN_VIEN ON PHONG_BAN.Ma_PB = NHAN_VIEN.PHG
+Inner Join QUANLY_DUAN ON QUANLY_DUAN.Ma_NHANVIEN = NHAN_VIEN.ID_Nhanvien
+Inner Join DU_AN ON DU_AN.Ma_DUAN = QUANLY_DUAN.Ma_DUAN 
+where Ten_PB = N'Thiết Kế' and Ngay_BATDAU = '2016/01/01'
+-- C5
+Update NHAN_VIEN set NamSinh = '1/1/1970' where ID_Nhanvien = 5
+Select HO_NV, Ten_NV, Luong, Ten_DUAN, NamSinh
+from NHAN_VIEN INNER JOIN QUANLY_DUAN  ON NHAN_VIEN.ID_Nhanvien = QUANLY_DUAN.Ma_NHANVIEN
+Inner Join DU_AN ON QUANLY_DUAN.Ma_DUAN = DU_AN.Ma_DUAN
+where YEAR(getdate()) - YEAR(NamSinh) > 50;
+
+-- Khacs ?????
+-- C1:
+SELECT NGAY_BATDAU FROM DU_AN
+WHERE NGAY_BATDAU = '2017%'
+
+-- C2:
+SELECT NV.TEN_NV, PB.TEN_PB
+FROM NHAN_VIEN NV
+INNER JOIN PHONG_BAN PB ON NV.PHG = PB.MA_PB
+WHERE PB.TEN_PB LIKE 'P%';
+
+-- C3:
