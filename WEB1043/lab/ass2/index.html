@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slide show</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<script src="index.js"></script>
-<style>
-    body {
-        background-color: green;
-    }
-</style>
+
 <body onload="load()">
     <img id="anh" src="b1.jpg" width="30%">
     <br>
@@ -21,5 +17,14 @@
     <input type="button" value="cuối" onclick="cuoi()">
     <input type="button" value="chạy" onclick="slideShow()">
     <input type="button" value="dừng" onclick="stop()">
+    <form action="" id="rform">
+        <label><input type="checkbox" name="checkbox" id="sothich">Sở thích</label>
+        <br>
+        <label><input type="radio" name="radio" value="male">Nam</label>
+        <label><input type="radio" name="radio" value="female">Nữ</label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="index.js"></script>
 </body>
 </html>
