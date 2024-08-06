@@ -160,3 +160,20 @@ FROM SanPham
 JOIN HoaDonChiTiet ON SanPham.maSanPham = HoaDonChiTiet.maSanPham
 GROUP BY SanPham.tenSP
 HAVING SUM(HoaDonChiTiet.soLuong) < (SELECT AVG(totalQuantity) FROM (SELECT SUM(soLuong) AS totalQuantity FROM HoaDonChiTiet GROUP BY maSanPham) AS SubQuery);
+
+
+
+-- PHẦN 1: LAB 8
+
+-- a
+CREATE UNIQUE INDEX idx_KhachHang_dienThoai
+ON KhachHang (dienThoai);
+-- b
+CREATE UNIQUE INDEX idx_KhachHang_Email
+ON KhachHang (Email);
+
+-- PHẦN 2: LAB 8
+BACKUP DATABASE QuanLyBanHang
+TO DISK = 'D:\Real\FTW\Backup\QuanLyBanHang.bak'
+WITH FORMAT, MEDIANAME = 'Z_SQLServerBackups',
+NAME = 'Full Backup of QuanLyBanHang';
