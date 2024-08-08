@@ -84,11 +84,11 @@ INSERT INTO PhieuMuon (MaPM, Ngaymuon, Ngaytra, MaSV, TrangThaiTra) VALUES
 ('PM005', '2024-05-15', '2024-11-20', 'TH01345', 'Da tra');
 
 INSERT INTO ChitietPhieumuon (MaPM, MaSach, Ghichu) VALUES
-('PM001', 'B1909', 'Muon sach ve doc'),
-('PM002', 'B3503', 'Muon sach ve doc'),
-('PM003', 'B9201', 'Muon sach ve doc'),
-('PM004', 'B4561', 'Muon sach ve doc'),
-('PM005', 'B8911', 'Muon sach ve doc');
+('PM001', 'B1909', 'Muon sach ve hoc'),
+('PM002', 'B3503', 'Muon sach ve hoc'),
+('PM003', 'B9201', 'Muon sach ve hoc'),
+('PM004', 'B4561', 'Muon sach ve hoc'),
+('PM005', 'B8911', 'Muon sach ve hoc');
 
 Select * from SinhVien
 Select * from LoaiSach
