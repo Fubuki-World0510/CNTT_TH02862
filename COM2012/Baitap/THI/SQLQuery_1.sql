@@ -52,11 +52,11 @@ SELECT * FROM PhanCongHuongDan
 -- b3: Hiện danh sách giảng viên, email, sdt
 SELECT TenGiangVien, Email, SoDienThoai FROM GiangVien
 
--- b4: Hiện tên đề tài, mã nhóm, số lượng thành viên
+-- b4: Hiện tên đề tài, mã nhóm, số lượng thành viên từ kỳ Summer 2023
 SELECT MaNhom, TenDeTai, SoLuongThanhVien
 FROM NhomDATN WHERE HocKy = N'Summer 2023'
 
--- b5: cập nhật sdt giảng viên theo mã
+-- b5: cập nhật sdt giảng viên theo mã GiangVien
 SELECT * FROM GiangVien
 UPDATE GiangVien
 SET SoDienThoai = '0983343782'
@@ -70,7 +70,7 @@ WHERE Email is NULL
 SELECT * FROM GiangVien
 
 -- b7:
--- Mục tiêu: Giảng viên tốt nghiệp
+-- Target: Giảng viên tốt nghiệp
 -- Query: MaGiangVien, TenGiangVien, Số nhóm đang hướng dẫn
 -- DB: GiangVien(MaGiangVien), GiangVien(TenGiangVien), Số nhóm đang hướng dẫn
 
@@ -78,6 +78,10 @@ SELECT GiangVien.MaGiangVien, GiangVien.TenGiangVien, NhomDATN.MaNhom FROM Giang
 INNER JOIN PhanCongHuongDan ON GiangVien.MaGiangVien = PhanCongHuongDan.MaGiangVien
 INNER JOIN NhomDATN ON NhomDATN.MaNhom = PhanCongHuongDan.MaNhom
 
+-- b8:
+
+
+-- Temp, đừng để ý đến nó
 DROP TABLE PhanCongHuongDan
 DROP TABLE GiangVien
 DROP TABLE NhomDATN
