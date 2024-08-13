@@ -1,5 +1,5 @@
 var anhAR = [];
-var currentIndex = 0;
+var currentIndex = 1;
 var invt
 var isLoop = false;
 
@@ -11,7 +11,7 @@ function load() {
 }
 
 function tiep() {
-    if (currentIndex <= 4) {
+    if (currentIndex < 4) {
         currentIndex++;
     } else {
         currentIndex = 1;
@@ -20,7 +20,7 @@ function tiep() {
 }
 
 function tro() {
-    if (currentIndex > 0) {
+    if (currentIndex > 1) {
         currentIndex--;
     } else {
         currentIndex = 4;
