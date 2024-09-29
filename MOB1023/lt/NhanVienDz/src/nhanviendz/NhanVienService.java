@@ -13,7 +13,18 @@ import java.util.Scanner;
  */
 public class NhanVienService {
 
-    ArrayList<NhanVien> nv = new ArrayList<NhanVien>();
+    public ArrayList<NhanVien> nv = new ArrayList<NhanVien>();
+    
+    public NhanVienService(){
+        nv.add(new NhanVien("Ha Noi", "Nam", "Nam", 99));
+        nv.add(new NhanVien("Ha Noi", "Nam", "Nam", 99));
+        nv.add(new NhanVien("Ha Noi", "Nam", "Nam", 99));
+        nv.add(new NhanVien("Ha Noi", "Nam", "Nam", 99));
+        nv.add(new NhanVien("Ha Noi", "Nam", "Nam", 99));
+    }
+    public ArrayList<NhanVien> getDanhSach(){
+        return nv;
+    }
 
     public void Them() {
         Scanner sc = new Scanner(System.in);
@@ -43,15 +54,6 @@ public class NhanVienService {
     }
 
     public void Hien() {
-        /**
-         * Sử dụng vòng forEach - Cú pháp như sau: for(<Khuôn> <tên biến> :
-         * <tên biến ArrayList>) {
-         *
-         * }
-         *
-         * - Ví dụ
-         */
-
         for (NhanVien b : nv) {
             if (nv.isEmpty()) {
                 System.out.println("Khong co thong tin");
@@ -62,20 +64,6 @@ public class NhanVienService {
     }
 
     public void Sua() {
-        /**
-         * Thao tác -> Tìm nhân viên 
-         * - Input: Ten nhân viên 
-         * Step 1: Dùng forEach lấy thông tin nhân viên 
-         * Step 2: Sử dụng điều kiện if else kiểm tra xem có đúng tên nhân viên cần nhập không?
-         *
-         * Thao tác -> Thu thập lại thông tin nhân viên 
-         * - Thực hiện đúng những gì đã làm ở hàm Them();
-         *
-         * Thao tác -> Cập nhật thông tin nhân viên 
-         * - Xóa dữ liệu của nhân viên trong hộp ArrayList 
-         * - Thêm mới dữ liệu của nhân viên trong hộp ArrayList
-         */
-
         Scanner sc = new Scanner(System.in);
         String gioitinh, diachi, tenNhanVien;
         int tuoi;

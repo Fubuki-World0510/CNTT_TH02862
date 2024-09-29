@@ -63,4 +63,9 @@ public class NhanVien {
         System.out.println("Gioi tinh: " + gioitinh);
         System.out.println("Dia chi: " + diachi);
     }
+
+    @Override
+    public String toString() {
+        return "Ten nhan vien: " + ten + ", Địa chỉ: " + diachi + ", Giới tính: " + gioitinh;
+    }
 }
