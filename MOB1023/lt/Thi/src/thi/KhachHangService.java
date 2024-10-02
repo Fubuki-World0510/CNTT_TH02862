@@ -21,7 +21,6 @@ public class KhachHangService {
         kh.add(new KhachHang("Nam", "Nam", 1, 1997, "0909090909", "Ha Noi"));
         kh.add(new KhachHang("Nam", "Nam", 1, 1997, "0909090909", "Ha Noi"));
         kh.add(new KhachHang("Nam", "Nam", 1, 1997, "0909090909", "Ha Noi"));
-        
     }
     public ArrayList<KhachHang> getDanhSach(){
         return kh;
