@@ -5,6 +5,7 @@
 package thi3;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -42,6 +43,7 @@ public class SInhVienView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_sv = new javax.swing.JTable();
         btn_load = new javax.swing.JButton();
@@ -59,10 +61,10 @@ public class SInhVienView extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         txt_name = new javax.swing.JTextPane();
         jLabel6 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        txt_gioitinh = new javax.swing.JTextPane();
         label_stx = new javax.swing.JLabel();
-        label_stx1 = new javax.swing.JLabel();
+        btn_rm = new javax.swing.JButton();
+        radio_nu = new javax.swing.JRadioButton();
+        radio_nam = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +79,11 @@ public class SInhVienView extends javax.swing.JFrame {
                 "ID", "Họ tên", "Lớp học", "Giới tính", "Trạng thái"
             }
         ));
+        tb_sv.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_svMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tb_sv);
 
         btn_load.setText("Load");
@@ -111,41 +118,62 @@ public class SInhVienView extends javax.swing.JFrame {
 
         jLabel6.setText("Giới tính");
 
-        jScrollPane6.setViewportView(txt_gioitinh);
-
         label_stx.setText("Status:");
 
-        label_stx1.setText("Status:");
+        btn_rm.setText("Delete");
+        btn_rm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_rmMouseClicked(evt);
+            }
+        });
+        btn_rm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_rmActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(radio_nu);
+        radio_nu.setText("Nữ");
+
+        buttonGroup1.add(radio_nam);
+        radio_nam.setText("Nam");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5)
-                            .addComponent(jScrollPane2)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addComponent(jLabel6)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addComponent(label_stx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(label_stx1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel5)
+                                .addComponent(jScrollPane2)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
+                                .addComponent(label_stx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(radio_nam)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radio_nu)
+                                .addGap(27, 27, 27)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_load)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_add))
+                        .addComponent(btn_add)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_rm))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
@@ -170,8 +198,10 @@ public class SInhVienView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(radio_nu)
+                            .addComponent(radio_nam))
+                        .addGap(13, 13, 13)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -179,10 +209,9 @@ public class SInhVienView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_load)
                     .addComponent(btn_add)
-                    .addComponent(label_stx))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_stx1)
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addComponent(label_stx)
+                    .addComponent(btn_rm))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,16 +228,46 @@ public class SInhVienView extends javax.swing.JFrame {
         String hoten = txt_name.getText();
         String lop = txt_class.getText();
         String trangthai = txt_status.getText();
-        String gioitinh = txt_gioitinh.getText();  
-        if(hoten.isEmpty()) {
-            label_stx.setText("Can them ten");
+        String gioitinh;
+        if(radio_nam.isSelected()) {
+            gioitinh = "Nam";
+        } else {
+            gioitinh = "Nu";
         }
-        if(id.isEmpty()) {
-            label_stx1.setText("Can them ID");
+        if(hoten == "" && id == "") {
+            label_stx.setText("Ban dang nhap thieu du lieu");
         } else {
             sv.addMore(new SinhVien(id, hoten, lop, gioitinh, trangthai));
+            loadData(sv.getInfo());
         }
     }//GEN-LAST:event_btn_addActionPerformed
+
+    private void tb_svMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_svMouseClicked
+        // TODO add your handling code here:
+        int row = tb_sv.getSelectedRow();
+        SinhVien sinhvien = sv.getInfo().get(row);
+        txt_id.setText(sinhvien.getId());
+        txt_class.setText(sinhvien.getLophoc());
+        txt_name.setText(sinhvien.getHoten());
+        txt_status.setText(sinhvien.getTrangThai());
+        if(sinhvien.getGioitinh().equals("Nam")) {
+            radio_nam.setSelected(true);
+        } else {
+            radio_nu.setSelected(true);
+        }
+    }//GEN-LAST:event_tb_svMouseClicked
+
+    private void btn_rmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_rmActionPerformed
+
+    private void btn_rmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_rmMouseClicked
+        // TODO add your handling code here:
+        int row = tb_sv.getSelectedRow();
+        String remove = sv.rm(row);
+        JOptionPane.showMessageDialog(this, remove);
+        loadData(sv.getInfo());
+    }//GEN-LAST:event_btn_rmMouseClicked
 
     /**
      * @param args the command line arguments
@@ -248,6 +307,8 @@ public class SInhVienView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_load;
+    private javax.swing.JButton btn_rm;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -258,12 +319,11 @@ public class SInhVienView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel label_stx;
-    private javax.swing.JLabel label_stx1;
+    private javax.swing.JRadioButton radio_nam;
+    private javax.swing.JRadioButton radio_nu;
     private javax.swing.JTable tb_sv;
     private javax.swing.JTextPane txt_class;
-    private javax.swing.JTextPane txt_gioitinh;
     private javax.swing.JTextPane txt_id;
     private javax.swing.JTextPane txt_name;
     private javax.swing.JTextPane txt_status;

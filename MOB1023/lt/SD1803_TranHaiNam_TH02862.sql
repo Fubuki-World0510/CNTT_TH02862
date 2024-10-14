@@ -111,3 +111,28 @@ DROP TABLE HoaDon;
 DROP TABLE KhachHang;
 DROP TABLE SanPham;
 DROP TABLE ChiTietHoaDon;
+
+CREATE PROC sp_GetEmployeeInfo
+@MaKhachHang INT,
+@HoTen VARCHAR(100),
+@SoDienThoai VARCHAR(100),
+@Email VARCHAR(100),
+@DiaChi VARCHAR(100)
+AS
+BEGIN
+    INSERT into KhachHang (MaKhachHang, HoTen, SoDienThoai, Email, DiaChi)
+    VALUES (@MaKhachHang, @HoTen, @SoDienThoai, @Email, @DiaChi)
+    select * from KhachHang
+END
+
+EXEC sp_GetEmployeeInfo @MaKhachHang = 6, @HoTen = 'Nguyen Van F', @SoDienThoai = '0983343787', @Email = 'f@mail.a', @DiaChi = 'Ha Noi';
+
+DROP PROC sp_GetEmployeeInfo
+
+CREATE PROC vietSoNguyen,
+@N AS
+BEGIN
+WHILE @N < 10
+
+
+END

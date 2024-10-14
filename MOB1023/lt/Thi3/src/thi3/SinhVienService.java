@@ -28,6 +28,10 @@ public class SinhVienService {
         sv.add(new SinhVien("TH3", "Nguyen Van C", "Nam", "SD12", "OK"));
         sv.add(new SinhVien("TH4", "Nguyen Van D", "Nam", "SD13", "OK"));
         sv.add(new SinhVien("TH5", "Nguyen Van E", "Nam", "SD14", "OK"));
-        
+    }
+    
+    public String rm(int viTri) {
+        sv.remove(viTri);
+        return "Done";
     }
 }
