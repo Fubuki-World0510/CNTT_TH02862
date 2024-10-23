@@ -326,9 +326,7 @@ AS
 BEGIN
     BEGIN TRY
         CREATE TABLE #NhaTroCanXoa
-    (
-        NhaTroID INT
-    )
+    (NhaTroID INT)
         INSERT INTO #NhaTroCanXoa
         (NhaTroID)
     SELECT NT.NhaTroID
